@@ -1,5 +1,4 @@
 function snakeCase(str) {
-  // debugger
   return str.toLowerCase().split(' ').join('_')
 }
 
@@ -39,33 +38,15 @@ const items = [
 ]
 
 /*
-
+<div class="ui card">
+  <div class="image">
+    <img src='./images/<image name>.jpg'>
+  </div>
+  <div class="content">
+    <span class="header">Name</span>
+    <div class="description">
+      Price
+    </div>
+  </div>
+</div>
 */
-
-
-
-const cardContainer = document.getElementById('card-container')
-
-const makeCard = ({name, price}, container) => {
-  const newCard = document.createElement("div")
-  newCard.classList.add("ui", "card")
-  newCard.id = snakeCase(name)
-  newCard.innerHTML += `
-    <div class="image">
-      <img src='./images/${snakeCase(name)}.jpg'>
-    </div>
-    <div class="content">
-      <span class="header">${name}</span>
-      <div class="description">
-        ${price}
-      </div>
-    </div>
-  `
-
-  newCard.addEventListener('click', (evt) => {
-    const desc = newCard.querySelector('.description')
-    desc.innerText = "Sold"
-  })
-  container.append(newCard)
-
-}
