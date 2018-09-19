@@ -40,8 +40,8 @@ const items = [
 document.addEventListener('DOMContentLoaded', () => {
 
   const cardContainer = document.getElementById("card-container")
-  cardContainer.classList.add("ui", "cards")
-  const card = document.createElement("div"); // added after lecture to fix CSS
+  cardContainer.classList.add("ui", "cards") // added after lecture to fix CSS
+  const card = document.createElement("div");
   const item = items[0];
   card.id = snakeCase(item.name)
   card.classList.add("ui", "card") //added after lecture to fix CSS
