@@ -37,6 +37,30 @@ const items = [
   }
 ]
 
+document.addEventListener('DOMContentLoaded', () => {
+
+  const cardContainer = document.getElementById("card-container")
+  cardContainer.classList.add("ui", "cards")
+  const card = document.createElement("div"); // added after lecture to fix CSS
+  const item = items[0];
+  card.id = snakeCase(item.name)
+  card.classList.add("ui", "card") //added after lecture to fix CSS
+  card.innerHTML = `
+    <div class="image">
+      <img src='./images/${snakeCase(item.name)}.jpg'>
+    </div>
+    <div class="content">
+      <span class="header">${item.name}</span>
+      <div class="description">
+        ${item.price}
+      </div>
+    </div>
+  `
+  cardContainer.append(card)
+})
+
+
+
 /*
 <div class="ui card">
   <div class="image">
